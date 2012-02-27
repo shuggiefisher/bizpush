@@ -490,6 +490,7 @@
 				B16E235314F90DC600EF30FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

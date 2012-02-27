@@ -1,4 +1,4 @@
-Campaigns = Ext.extend(Ext.Panel, {
+Promote = Ext.extend(Ext.Panel, {
     layout: 'card',
     initComponent: function() {
 
@@ -13,8 +13,8 @@ Campaigns = Ext.extend(Ext.Panel, {
 
         this.items = this.listpanel;
 
-        Campaigns.superclass.initComponent.call(this);
+        Promote.superclass.initComponent.call(this);
     }
 });
 
-Ext.reg('campaigns', Campaigns);
+Ext.reg('promote', Promote);

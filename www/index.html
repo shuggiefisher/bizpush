@@ -1,80 +1,90 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  <title></title>
-  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
-	<meta charset="utf-8">
+	<head>
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+		<meta charset="utf-8">
+		<!-- iPad/iPhone specific css below, add after your main css >
+		<link rel="stylesheet" media="only screen and (max-device-width: 1024px)" href="ipad.css" type="text/css" />
 
+		<link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="iphone.css" type="text/css" />
+		-->
+		<!--        media="only screen and (max-device-width: 480px)" -->
+		<link rel="stylesheet"  href="css/sencha-touch.css" type="text/css" />
+		<!-- If your application is targeting iOS BEFORE 4.0 you MUST put json2.js from http://www.JSON.org/json2.js into your www directory and include it here -->
+		<script type="text/javascript" charset="utf-8" src="js/lib/phonegap-1.4.1.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/lib/sencha-touch.js"></script>
+		<!-- <script type="text/javascript" charset="utf-8" src="js/devices/camera.js"></script> -->
+		
+		<!-- models and stores -->
+		<script type="text/javascript" charset="utf-8" src="js/app/models.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/app/stores.js"></script>
+		
+		<!-- views -->
+		<script type="text/javascript" charset="utf-8" src="js/app/campaign-list.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/app/promote.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/app/contact-list.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/app/contact-detail.js"></script>
+		
+		<!-- app -->
+		<script type="text/javascript" charset="utf-8" src="js/app/settings.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/app/app.js"></script>
+		
+		<!-- launch -->
+		<script type="text/javascript" charset="utf-8" src="js/index.js"></script>
+		<script type="text/javascript">
+			// If you want to prevent dragging, uncomment this section
+			/*
+			 function preventBehavior(e)
+			 {
+			 e.preventDefault();
+			 };
+			 document.addEventListener("touchmove", preventBehavior, false);
+			 */
 
-	<!-- iPad/iPhone specific css below, add after your main css >
-	<link rel="stylesheet" media="only screen and (max-device-width: 1024px)" href="ipad.css" type="text/css" />	
-     
-	<link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="iphone.css" type="text/css" />		
-	-->
-<!--        media="only screen and (max-device-width: 480px)" -->
-    <link rel="stylesheet"  href="css/sencha-touch.css" type="text/css" />		
-        
-	<!-- If your application is targeting iOS BEFORE 4.0 you MUST put json2.js from http://www.JSON.org/json2.js into your www directory and include it here -->
-	<script type="text/javascript" charset="utf-8" src="js/lib/phonegap-1.4.1.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/lib/sencha-touch.js"></script>
+			/* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
+			 see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
+			 for more details -jm */
+			/*
+			 function handleOpenURL(url)
+			 {
+			 // TODO: do something with the url passed in.
+			 }
+			 */
 
-	<script type="text/javascript" charset="utf-8" src="js/app/models.js"></script>
-	<script type="text/javascript" charset="utf-8" src="js/app/stores.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/app/campaigns.js"></script>        
-    <script type="text/javascript" charset="utf-8" src="js/app/contact-list.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/app/contact-detail.js"></script>        
-    <script type="text/javascript" charset="utf-8" src="js/app/settings.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/app/app.js"></script>
-        
-    <script type="text/javascript" charset="utf-8" src="js/index.js"></script>
-        
-    <script type="text/javascript">
+			function onBodyLoad() {
+				document.addEventListener("deviceready", onDeviceReady, false);
+			}
 
-
-	// If you want to prevent dragging, uncomment this section
-	/*
-	function preventBehavior(e) 
-	{ 
-      e.preventDefault(); 
-    };
-	document.addEventListener("touchmove", preventBehavior, false);
-	*/
-	
-	/* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
-	see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
-	for more details -jm */
-	/*
-	function handleOpenURL(url)
-	{
-		// TODO: do something with the url passed in.
-	}
-	*/
-	
-	function onBodyLoad()
-	{		
-		document.addEventListener("deviceready", onDeviceReady, false);
-	}
-	
-	/* When this function is called, PhoneGap has been initialized and is ready to roll */
-	/* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
-	see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
-	for more details -jm */
-	function onDeviceReady()
-	{
-		// do your thing!
-		//navigator.notification.alert("PhoneGap is working")
-	}
-    
-    </script>
-  </head>
-  <body onload="onBodyLoad()">
-<!--	<h1>Hey, it's PhoneGap!</h1>
-	<p>Don't know how to get started? Check out <em><a target="_blank" href="http://www.phonegap.com/start#ios-x4">PhoneGap Start</a></em>
-	<br />
-	<ol>
+			/* When this function is called, PhoneGap has been initialized and is ready to roll */
+			/* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
+			 see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
+			 for more details -jm */
+			function onDeviceReady() {
+				// do your thing!
+				//navigator.notification.alert("PhoneGap is working")
+			}
+		</script>
+	</head>
+	<body onload="onBodyLoad()">
+		<!--	<h1>Hey, it's PhoneGap!</h1>
+		<p>Don't know how to get started? Check out <em><a target="_blank" href="http://www.phonegap.com/start#ios-x4">PhoneGap Start</a></em>
+		<br />
+		<ol>
 		<li>Check your console log for any white-list rejection errors.</li>
 		<li>Add your allowed <strong>hosts</strong> in PhoneGap.plist/ExternalHosts (wildcards OK, don't enter the URL scheme)</li>
-	</ol>
-  --></body>
+		</ol>
+		-->
+		<!-- camera test code-->
+		<!--
+
+		<button onclick="capturePhoto();">Capture Photo</button> <br>
+		<button onclick="capturePhotoEdit();">Capture Editable Photo</button> <br>
+		<button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
+		<button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>
+		<img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+		<img style="display:none;" id="largeImage" src="" />
+
+		-->
+	</body>
 </html>

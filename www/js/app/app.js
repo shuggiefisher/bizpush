@@ -28,16 +28,21 @@ hello.App = Ext.extend(Ext.TabPanel, {
 
        // if (navigator.onLine) {
             this.items = [{
-                title: 'Contacts',
+                title: 'My Promotions',
+                header: this.header,
+                iconCls: 'compose',
+                xtype: 'campaign-list'
+            }, {
+                title: 'Promote',
+                header: this.header,
+                iconCls: 'compose',
+                xtype: 'promote'                
+            }, {
+                title: 'My Contacts',
                 header: this.header,
                 iconCls: 'bookmarks',
                 xtype: 'contact-list'                
-            }, {
-                title: 'Campaigns',
-                header: this.header,
-                iconCls: 'compose',
-                xtype: 'campaigns'
-            }, {
+            },  {
                 title: 'Settings',
                 header: this.header,
                 iconCls: 'settings',
