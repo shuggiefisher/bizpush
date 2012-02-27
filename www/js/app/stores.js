@@ -51,10 +51,20 @@ ContactsStore = new Ext.data.Store({
 		name : 'Kyle, Robert',
 		email: 'r.kyle@ed.ac.uk'
 	}, {
+		first_name: 'Freely',
+		last_name: 'I P',
+		name : 'Freely, I P',
+		email: 'ip@freely.com'
+	}, {
 		first_name: 'Joe',
 		last_name: 'Bloggs',
 		name : 'Bloggs, Joe',
 		email: 'j@bloggs.com'
+	}, {
+		first_name: 'Smith',
+		last_name: 'John',
+		name : 'Smith, John',
+		email: 'jsmith@email.com'
 	}, {
 		first_name: 'Sven',
 		last_name: 'Poppelmann',

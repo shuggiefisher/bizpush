@@ -7,6 +7,9 @@ PromotionList = Ext.extend(Ext.Panel, {
             // itemTpl: '<div class="avatar"<tpl if="photo"> style="background-image: url({photo})"</tpl>></div><span class="title">{title}<tpl if="position || affiliation"><br /></tpl></span>',
             itemTpl: '<span class="title">{title}</span><br/><img <tpl if="photo"> width="290" height="290" src="{photo}"</tpl>/><br/><span>{description}</span><br/><span>Sent to {distribution_count} people on {date:date("d/m/Y")}</span>',
             store: PromotionsStore,
+            multiSelect: false,
+            singleSelect: true,
+            
             listeners: {
                 selectionchange: {fn: this.onSelect, scope: this}
             }
@@ -36,7 +39,9 @@ PromotionList = Ext.extend(Ext.Panel, {
     },
     
     onSelect: function(sel, records){
-    	if (records[0] !== undefined) {
+    	this.list.getSelectionModel().deselectAll();
+        Ext.repaint();
+    	// if (records[0] !== undefined) {
             //alert('click' + records[0].get("photo"));
             // var contactCard = new ContactDetail({
                 // prevCard: this.listpanel,
@@ -44,7 +49,7 @@ PromotionList = Ext.extend(Ext.Panel, {
             // });
 //             
             // this.setActiveItem(contactCard, 'slide');
-        }
+        // }
         
     }
 
