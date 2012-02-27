@@ -20,8 +20,14 @@ hello.App = Ext.extend(Ext.TabPanel, {
     cardSwitchAnimation: false,
     
     header: {
+    	ui: 'light',
     	xtype: 'toolbar',
-        title: 'bizpush'
+        title: 'bizpush',
+        dock: 'top',
+        layout: {pack: 'right' },
+        items: [{
+            text: 'Settings'
+        }]
   	},
            
     initComponent: function() {
@@ -31,7 +37,7 @@ hello.App = Ext.extend(Ext.TabPanel, {
                 title: 'My Promotions',
                 header: this.header,
                 iconCls: 'compose',
-                xtype: 'campaign-list'
+                xtype: 'promotion-list'
             }, {
                 title: 'Promote',
                 header: this.header,
@@ -42,12 +48,14 @@ hello.App = Ext.extend(Ext.TabPanel, {
                 header: this.header,
                 iconCls: 'bookmarks',
                 xtype: 'contact-list'                
-            },  {
-                title: 'Settings',
-                header: this.header,
-                iconCls: 'settings',
-                xtype: 'settings'
-            }];
+            }
+            // ,  {
+                // title: 'Settings',
+                // header: this.header,
+                // iconCls: 'settings',
+                // xtype: 'settings'
+            // }
+            ];
         // } else {
             // this.on('render', function(){
                 // this.el.mask('No internet connection.');

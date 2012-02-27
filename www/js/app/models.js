@@ -9,3 +9,14 @@ Ext.regModel('Contact', {
     	'twitter'
 	]
 });
+
+Ext.regModel('Promotion', {
+	fields: [
+		'id',
+		'title',
+		{ name: 'date', type: 'date'},
+		'photo',
+		'description',
+		'distribution_count'
+	]
+});

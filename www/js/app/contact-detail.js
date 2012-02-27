@@ -5,6 +5,7 @@ ContactDetail = Ext.extend(Ext.Panel, {
     initComponent: function(){
         this.dockedItems = [{
             xtype: 'toolbar',
+            ui: 'light',
             title: this.record.data.name,
             items: [{
                 ui: 'back',
