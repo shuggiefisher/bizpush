@@ -7,7 +7,12 @@ Ext.regModel('Contact', {
     	'last_name', 
     	'email', 
     	'twitter'
-	]
+	],
+	
+	proxy: {
+        type: 'localstorage',
+        id  : 'contacts'
+   	}
 });
 
 Ext.regModel('Promotion', {

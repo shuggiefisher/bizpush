@@ -6,7 +6,7 @@ ContactList = Ext.extend(Ext.Panel, {
             grouped: true,
             
             indexBar: true,
-            itemTpl: '<div class="avatar"<tpl if="photo"> style="background-image: url({photo})"</tpl>></div><span class="name">{name}<tpl if="position || affiliation"><br /><span class="tertiary">{position}<tpl if="affiliation">, {affiliation}</tpl></span></tpl></span>',
+            itemTpl: '<span class="name">{last_name}, {first_name}</span>',
             store: ContactsStore,
             listeners: {
                 selectionchange: {fn: this.onSelect, scope: this}

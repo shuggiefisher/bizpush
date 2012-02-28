@@ -20,7 +20,7 @@ PromotionsStore = new Ext.data.Store({
 		title: 'New brush',
 		date: '03/03/2012',
 		photo: './images/gel.jpg',
-		description: 'Just got this great new hairbrush. 25% with a haircut.',
+		description: 'Just got this great new hairbrush. 50% off with a haircut.',
 		distribution_count: 12
 	}],
 	
@@ -35,41 +35,36 @@ PromotionsStore = new Ext.data.Store({
 ContactsStore = new Ext.data.Store({
     model: 'Contact',
 
+	
 	data: [{
 		first_name: 'Eager',
 		last_name: 'Beaver',
-		name : 'Beaver, Eager',
 		email: 'eager@beaver.com'
 	}, {
 		first_name: 'Marisa',
 		last_name: 'Tommasini',
-		name : 'Tommasini, Marisa',
-		email: 'sven@poppelmann.net'
+		email: 'marisa@poppelmann.net'
 	}, {
 		first_name: 'Rob',
 		last_name: 'Kyle',
-		name : 'Kyle, Robert',
 		email: 'r.kyle@ed.ac.uk'
 	}, {
-		first_name: 'Freely',
-		last_name: 'I P',
-		name : 'Freely, I P',
+		first_name: 'I P',
+		last_name: 'Freely',
 		email: 'ip@freely.com'
 	}, {
 		first_name: 'Joe',
 		last_name: 'Bloggs',
-		name : 'Bloggs, Joe',
 		email: 'j@bloggs.com'
 	}, {
 		first_name: 'Smith',
 		last_name: 'John',
-		name : 'Smith, John',
 		email: 'jsmith@email.com'
 	}, {
 		first_name: 'Sven',
 		last_name: 'Poppelmann',
-		name : 'Poppelmann, Sven',
-		email: 'sven@poppelmann.net'
+		email: 'sven@poppelmann.net',
+		twitter: 'kalayl'
 	}],
 
 	sorters: [{
